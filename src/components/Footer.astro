@@ -1,0 +1,45 @@
+---
+import githubLogo from '../assets/Social Icons/Github.svg'
+import linkedInLogo from '../assets/Social Icons/LinkedIn.svg'
+import twitterLogo from '../assets/Social Icons/Twitter.svg'
+import Link from './Link.astro'
+---
+
+<footer>
+  <div class='container'>
+    <Link>Johnathan Specter</Link>
+    <ul>
+      <li>
+        <Link variant='icon' aria-label=''>
+          <img src={githubLogo} alt='GitHub Logo' />
+        </Link>
+      </li>
+      <li>
+        <Link variant='icon' aria-label=''>
+          <img src={linkedInLogo} alt='LinkedIn Logo' />
+        </Link>
+      </li>
+      <li>
+        <Link variant='icon' aria-label=''>
+          <img src={twitterLogo} alt='Twitter Logo' />
+        </Link>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background: #2e3038;
+    color: white;
+    padding: 0.75rem 0;
+  }
+  footer div.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5rem 0 1rem;
+  }
+  ul {
+    display: flex;
+  }
+</style>

@@ -1,0 +1,70 @@
+---
+import Link from './Link.astro'
+import menuIcon from '../assets/Hamburger Menu.svg'
+
+const navLinks = ['Articles', 'Chats', 'Awards', 'About']
+---
+
+<header class='container'>
+  <Link class='logo'>Johnathan Specter</Link>
+  <button>
+    <img src={menuIcon} alt='Open menu' />
+  </button>
+  <nav>
+    <ul>
+      {
+        navLinks.map((label) => (
+          <li>
+            <Link>{label}</Link>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+  <Link class='cta' variant='secondary'>Get in touch</Link>
+</header>
+
+<style>
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header.container {
+    padding-top: 2rem;
+  }
+  .logo {
+    color: white;
+    transform: translateX(-1.5rem);
+  }
+  button {
+    background: transparent;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #ffffff20;
+  }
+  .cta {
+    display: none;
+  }
+  nav {
+    display: none;
+  }
+  ul {
+    display: flex;
+  }
+
+  @media (min-width: 1024px) {
+    button {
+      display: none;
+    }
+    nav {
+      display: initial;
+    }
+    .cta {
+      display: initial;
+    }
+  }
+</style>

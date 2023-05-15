@@ -1,0 +1,59 @@
+---
+import JPMorganLogo from '../assets/Logos/JP Morgan.svg'
+import samsungLogo from '../assets/Logos/Samsung.svg'
+import tinderLogo from '../assets/Logos/Tinder.svg'
+import verizonLogo from '../assets/Logos/Verizon.svg'
+import visaLogo from '../assets/Logos/Visa.svg'
+import walmartLogo from '../assets/Logos/Walmart.svg'
+
+const brands = [
+  { icon: walmartLogo, label: 'Walmart logo' },
+  { icon: JPMorganLogo, label: 'J.P. Morgan Logo' },
+  { icon: visaLogo, label: 'Visa Logo' },
+  { icon: tinderLogo, label: 'Tinder Logo' },
+  { icon: samsungLogo, label: 'Samsung Logo' },
+  { icon: verizonLogo, label: 'Verizon Logo' }
+]
+---
+
+<ul>
+  {
+    brands.map(({ icon, label }) => (
+      <li>
+        <img src={icon} alt={label} />
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+   ul {
+    display: flex;uu
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+  }
+   li {
+    flex: 0 0 33%;
+  }
+
+  @media (min-width: 768px) {
+     li {
+      flex: 0 0 26%;
+    }
+  }
+
+  @media (min-width: 1024px) {
+     ul {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+     li {
+      flex: 0 0 auto;
+    }
+     div {
+      gap: 5rem;
+    }
+  }
+</style>
